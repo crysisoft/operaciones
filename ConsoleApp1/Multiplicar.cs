@@ -4,11 +4,11 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    class Sumar:Operaciones
+    class Multiplicar : Operaciones
     {
         public void Iniciar()
         {
-            Init("Vamos a sumar dos números");
+            Init("Vamos a multiplicar dos números");
             Resultado = operacion(NumeroUno, NumeroDos);
             darSalida(Resultado);
         }
@@ -16,7 +16,7 @@ namespace ConsoleApp1
         static int operacion(int a, int b)
         {
 
-            return a+ b;
+            return a * b;
         }
     }
 }

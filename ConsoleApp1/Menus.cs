@@ -10,10 +10,11 @@ namespace ConsoleApp1
 
         public void Iniciar()
         {
-
-            Console.WriteLine(operacion);
+            Console.Clear();
             mostrarMenu();
-
+            Console.WriteLine();
+            leerOperacion();
+            hacerMiOperacion();
         }
 
         static void mostrarMenu()
@@ -27,10 +28,43 @@ namespace ConsoleApp1
             Console.WriteLine("############################");
         }
 
-        private  void leerOperacion()
+        private void leerOperacion()
         {
+            Utilidades utilidad = new Utilidades();
+            string ingreso_teclado;
             Console.WriteLine("Seleccione una opción");
-            this.operacion=
+            ingreso_teclado = Console.ReadLine();
+            this.operacion = utilidad.validarNumero(ingreso_teclado);
+
+        }
+
+        public void hacerMiOperacion()
+        {
+            switch (operacion)
+            {
+                case 1:
+                    Sumar suma = new Sumar();
+                    suma.Iniciar();
+                    break; 
+                case 2:
+                    Restar resta = new Restar();
+                    resta.Iniciar();
+                    break; 
+                case 3:
+                    Multiplicar multiplica = new Multiplicar();
+                    multiplica.Iniciar();
+                    break;
+                case 5:
+                    Environment.Exit(1);
+                    break;
+                
+                default:
+                    Console.WriteLine("Opción no valida");
+                    Console.ReadKey();
+                    break;
+            }
+
+            Iniciar();
         }
     }
 }

@@ -6,6 +6,7 @@ namespace ConsoleApp1
 {
     class Utilidades
     {
+
         public int leerNumeroYAsignar(string mensaje)
         {
             string valorInicial = "";
